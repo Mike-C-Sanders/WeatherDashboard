@@ -12,27 +12,50 @@
         <link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
         <title>Weather Dashboard</title>
     </head>
-    <header>
-        <h1 id="weather=heading">Weather Dashboard</h1>
-    </header>
     <body>
-        <section class="container" id="search-box">
-            <h2>Search for a City</h2>
-            <form>
-                <div class="mb-3">
-                    
-                    <input type="text" class="form-control form-control-lg" id="city-search" placeholder="Example Tokyo">
-                </div>
-                <button type="submit" class="btn btn-primary">Search</button>
+        <header>
+            <h1 id="weather=heading">Weather Dashboard</h1>
+        </header>
+        <main>
+            <div class="row">
+                <section class="col-4 p-4 m-0.5" id="search-section">
+                    <article id="search-box">
+                        <h2 class="p-1">Search for a City:</h2>
+                        <form>
+                            <div class="mb-3">
+                                
+                                <input type="text" class="form-control form-control-lg" id="city-search" placeholder="Example Tokyo">
+                            </div>
+                            <div class="d-grid gap2">
+                                <button type="submit" class="btn btn-primary">Search</button>
 
-            </form>
-        </section>
-        <section class="container" id="weather-today">
-            <h2>Weather Details</h2>
-        </section>
-        <section class="container" id="5-day-forecast">
-            <h2>5-Day Forecast</h2>
-        </section>
+                            </div>
+                        </form>
+                    </article>
+                    <article id="search-results">
+                        <ul class="list-group" id="search-list">
+                            <li class="list-group-item">Seattle</li>
+                            <li class="list-group-item">New York</li>
+                            <li class="list-group-item">Portland</li>
+                            <li class="list-group-item">Chicago</li>
+                            <li class="list-group-item">Dubai</li>
+                            <li class="list-group-item">Waterville</li>
+                            <li class="list-group-item">Houston</li>
+                            
+                        </ul>
+                    </article>
+                </section>
+                <section class="container col">
+                    <article class="" id="weather-today">
+                        <h2>Weather Details</h2>
+                    </article>
+                    <article class="" id="5-day-forecast">
+                        <h2>5-Day Forecast</h2>
+                    </article>
+                </section>
+            </div>
+
+        </main>
         
         <script src="./JS/script.js"></script>
     </body>
