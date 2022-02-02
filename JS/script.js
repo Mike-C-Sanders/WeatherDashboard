@@ -1,17 +1,48 @@
 // Api variables from https://openweathermap.org/
 var apiKey = '&appid=ec3531a4604c1c9d7f8f0e0ac90c2251'
-var apiCityToday = 'api.openweathermap.org/data/2.5/weather?q='
+var apiCityToday = 'https://api.openweathermap.org/data/2.5/weather?q='
 
 // Global variables
-var city = 'London';
-var apiRequest = `${apiCityToday}${city}${apiKey}`
+var searchBtn = document.querySelector('#search-button');
+var searchCity = document.querySelector('#city-search');
+var todayHeader = document.querySelector('#today-header');
+var todaysTemp = document.querySelector('#todays-temp');
+var todaysWind = document.querySelector('#todays-wind');
+var todaysHumidity = document.querySelector('#todays-humidity');
+var todaysUVI = document.querySelector('#todays-uvi');
+var city;
 
-console.log(apiRequest);
+//Get today's weather
+//Get 5-day forecast
 
-var todaysWeather = fetch('api.openweathermap.org/data/2.5/weather?q=London&appid=ec3531a4604c1c9d7f8f0e0ac90c2251').then(function(response){
-        console.log(response.json());
-    }).catch(function(error){
-        console.log('there was an error:', error);
+//when a user searches for a city.
+var searchForCity = function(){
+
+    searchBtn.addEventListener('click', function(event){
+
+        event.preventDefault();
+
+        city = searchCity.value;
+
+        var apiRequest = `${apiCityToday}${city}&units=imperial${apiKey}`;
+
+        fetch(apiRequest).then(function(response){
+        
+                return response.json();
+            }).then(function(json){
+                updateTodaysWeather(json);
+            }).catch(function(error){
+                console.log('there was an error:', error);
+            })
+            
     })
-    
-// todaysWeather();
+}
+
+var updateTodaysWeather = function(data){
+    todayHeader.textContent = `${data.name} `
+
+
+
+}
+
+searchForCity();

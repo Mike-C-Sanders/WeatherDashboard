@@ -21,14 +21,14 @@
                 <!-- Search box form -->
                 <section class="col-3 p-4 m-0.5" id="search-section">
                     <article id="search-box">
-                        <h2 class="p-1">Search for a City:</h2>
+                        <h2 class="p-1" id="search-city-header">Search for a City:</h2>
                         <form>
                             <div class="mb-3">
                                 
                                 <input type="text" class="form-control form-control-lg" id="city-search" placeholder="Example Tokyo">
                             </div>
                             <div class="d-grid gap2">
-                                <button type="submit" class="btn btn-primary">Search</button>
+                                <button type="submit" class="btn btn-primary" id="search-button">Search</button>
 
                             </div>
                         </form>
@@ -46,7 +46,7 @@
                     </article>
                 </section>
                 <!-- Container section outlining the weather today & 5 day forecast -->
-                <section class="container col  p-4 m-0.5">
+                <section class="container col  p-4 m-0.5" id="weather-results-section">
 
                     <!-- Today's weather article -->
                     <article class="row border border-1 border-dark" id="weather-today">
