@@ -12,6 +12,7 @@ var todaysWind = document.querySelector('#todays-wind');
 var todaysHumidity = document.querySelector('#todays-humidity');
 var todaysPressure = document.querySelector('#todays-pressure');
 var todayIcon =document.querySelector('#today-icon');
+var forecastCards =document.querySelector('#5-day-cards');
 
 var city;
 // var storedSearch = localStorage.getItem(JSON.stringify)
@@ -28,6 +29,7 @@ var searchForCity = function(){
 
         city = searchCity.value;
 
+        //Openweather's api URL for both today's weather and the 5 day forecast
         var apiRequestToday = `${apiCityToday}${city}&units=imperial${apiKey}`;
         var apiRequest5Day = `${apiCity5Day}${city}&units=imperial${apiKey}`
         //Get today's weather
@@ -64,8 +66,12 @@ var updateTodaysWeather = function(data){
     // localStorage.setItem(data.name);
 }
 
-var update5DayForecast = function(data){
+//Create the 5 day forecast section of the page.
+var create5DayForecast = function(data){
+    //we want 5 days displayed, so loop through 5 times
+    for(var i = 0; i < 5; i++){
 
+    }
 
 
 }
@@ -78,4 +84,10 @@ var clearCardText = function(){
 }
 searchForCity();
 
-// clearCardText();
+var printForecast = function(data){
+    var cardDate = document.createElement('h4');
+    var cardTemp = document.createElement('p')
+    var cardTemp = document.createElement('p')
+    var cardTemp = document.createElement('p')
+
+}
